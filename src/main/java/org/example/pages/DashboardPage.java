@@ -15,15 +15,12 @@ public class DashboardPage {
     @FindBy(xpath="//*[@id=\"userName-value\"]")
     WebElement currentUser;
 
-    public boolean isCurrentUserCorrect(String user) {
-        String textCurrentUser = currentUser.toString();
-        if (user.equals(textCurrentUser)) {
-            System.out.println("Prawidłowy User: " + currentUser);
-            return true;
+    public void isCurrentUserCorrect(String user) {
+        if (currentUser.getText().equalsIgnoreCase(user)){
+            System.out.println("Prawidłowy User: " + currentUser.getText());
         }
     else {
-            System.out.println("Błędny User: " + currentUser);
-            return false;
+            System.out.println("Błędny User: " + currentUser.getText());
         }
     }
 }

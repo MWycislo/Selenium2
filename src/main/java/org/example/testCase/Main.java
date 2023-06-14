@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
@@ -20,16 +21,16 @@ public class Main {
         driver.get("https://demoqa.com/books");
         driver.manage().window().maximize();
 
-        HomePage homepage = new HomePage(driver);
-        LoginPage loginpage = new LoginPage(driver);
-        DashboardPage dashboardPage = new DashboardPage(driver);
+        HomePage homepage = PageFactory.initElements(driver, HomePage.class);
+        LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
 
         homepage.loginClick();
 
         loginpage.enterUserName("gunjankaushik");
         loginpage.enterPassword("Password@123");
         loginpage.clickLogin();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         dashboardPage.isCurrentUserCorrect("gunjankaushik");
     }
 }
-
