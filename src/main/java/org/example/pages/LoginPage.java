@@ -18,4 +18,7 @@ public class LoginPage {
         driver.findElement(userName).sendKeys(user);
     }
 
+    public void enterPassword(String pass) {
+        driver.findElement(password).sendKeys(pass);
+    }
 }

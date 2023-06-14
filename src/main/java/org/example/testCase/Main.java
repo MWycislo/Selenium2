@@ -25,8 +25,7 @@ public class Main {
 
         homepage.loginClick();
         loginpage.enterUserName("gunjankaushik");
-
-
+        loginpage.enterPassword("Password@123");
     }
 }
 
