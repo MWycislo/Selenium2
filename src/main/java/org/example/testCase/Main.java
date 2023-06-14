@@ -1,5 +1,6 @@
 package org.example.testCase;
 
+import org.example.pages.DashboardPage;
 import org.example.pages.HomePage;
 import org.example.pages.LoginPage;
 import org.openqa.selenium.By;
@@ -21,11 +22,14 @@ public class Main {
 
         HomePage homepage = new HomePage(driver);
         LoginPage loginpage = new LoginPage(driver);
-
+        DashboardPage dashboardPage = new DashboardPage(driver);
 
         homepage.loginClick();
+
         loginpage.enterUserName("gunjankaushik");
         loginpage.enterPassword("Password@123");
+        loginpage.clickLogin();
+        dashboardPage.isCurrentUserCorrect("gunjankaushik");
     }
 }
 
