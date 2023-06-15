@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class Main {
     public static void main(String[] args) {
-        System.setProperty("Webdriver.Chrome.Driver", "\"C:\\Users\\user\\Desktop\\repozytoria\\Selenium\\chromedriver\\chromedriver.exe\"");
+        System.setProperty("Webdriver.Chrome.Driver", "D:\\Dokumenty\\SDA - Tester Oprogramowania\\Repozytoria\\Selenium\\chromedriver\\chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(ops);
